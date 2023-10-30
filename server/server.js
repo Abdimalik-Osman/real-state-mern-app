@@ -6,7 +6,7 @@ mongoose.connect(process.env.DB_URL)
 .then(()=>{
     console.log("connection established successfully");
 })
-.catch(err => console(err.message));
+.catch((err) =>{ console.error(err.message)});
 const app = express();
 
 app.listen(4000,()=>{
