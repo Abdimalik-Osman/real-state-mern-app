@@ -5,7 +5,7 @@ const  errorHandler  = require('../utils/error');
 
 exports.SingUp = async(req,res,next)=>{
 try {
-    
+    console.log("here")
     const user = await User.findOne({username: req.body.username});
     if(user?.email == req.body?.email || user?.username == req.body?.username){
         next(errorHandler(400,"username or email already in uses"))
