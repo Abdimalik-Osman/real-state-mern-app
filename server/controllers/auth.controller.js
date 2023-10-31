@@ -27,8 +27,8 @@ try {
 // sign in 
 exports.LogIn = async(req, res, next) => {
     try {
-        const {username, password} = req.body
-        const user = await User.findOne({ username: username})
+        const {email, password} = req.body
+        const user = await User.findOne({ email: email})
         if(!user) return next(errorHandler(404,'User not found'));
         const validPassword = bcryptjs.compareSync(password, user.password);
 
