@@ -7,4 +7,6 @@ const router = express.Router();
 router.post('/signup',AuthController.SingUp )
 // login
 router.post('/login',AuthController.LogIn )
+// google sign in
+router.post('/google',AuthController.google )
 module.exports = router
